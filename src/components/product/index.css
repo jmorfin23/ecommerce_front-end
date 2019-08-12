@@ -1,0 +1,31 @@
+.card {
+  width: 250px;
+  height: 450px;
+  margin-top: 50px;
+  display: inline-block;;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.card-img {
+  width: 100%;
+  padding: 10px;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 130%;
+  padding: 1px;
+}
+.card-price {
+  padding: 1px;
+}
+.card-text {
+  padding: 1px;
+  overflow-y: auto;
+}
+.btn {
+  padding: 1px;
+  cursor: pointer;
+}
+.container {
+  padding-right: 0px;
+}

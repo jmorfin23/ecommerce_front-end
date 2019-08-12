@@ -1,15 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './index.css';
-import {NavLink} from 'react-router-dom';
 
 
-class CartItem extends Component {
-  render() {
+
+function CartItem(props) {
   return (
-    <div className="cartitem">
-      <h1>Cart Item</h1>
-    </div>
+        <tr>
+          <td>{props.cart.id}</td>
+          <td>{props.cart.title}</td>
+          <td>{props.cart.price}</td>
+          <td>{props.cart.description}</td>
+          <td onClick={props.deleteFromCart} className="remove">X</td>
+        </tr>
+
   );
-}
 }
 export default CartItem;

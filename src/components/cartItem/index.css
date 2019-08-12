@@ -1,0 +1,13 @@
+table {
+  margin-top: 80px;
+}
+.remove {
+  height: 30%;
+  width: 70%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  cursor: pointer;
+}

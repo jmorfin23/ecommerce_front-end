@@ -1,15 +1,32 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './index.css';
-import {NavLink} from 'react-router-dom';
+import CartItem from '../cartItem';
+
+function CartTable(props) {
 
 
-class CartTable extends Component {
-  render() {
   return (
     <div className="carttable">
-      <h1>Cart Table</h1>
+      <table className="table-dark table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        {
+          props.carts &&
+            props.carts.map( cart => <CartItem cart={cart} key={cart.id} deleteFromCart={props.deleteFromCart}/>
+            )
+        }
+        </tbody>
+      </table>
     </div>
   );
 }
-}
+
 export default CartTable;

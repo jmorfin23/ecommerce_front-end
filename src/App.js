@@ -11,7 +11,7 @@ function App() {
     <div className="App">
     <Header />
     <Switch>
-    <Route exact path='/' render={() => <Products />} />
+    <Route exact path='/' render={() => <Products  />} />
     <Route exact path='/inventory' render={() => <Inventory />} />
     <Route exact path='/checkout' render={() => <Checkout />} />
     </Switch>
