@@ -8,9 +8,9 @@ function CartItem(props) {
         <tr>
           <td>{props.cart.id}</td>
           <td>{props.cart.title}</td>
-          <td>{props.cart.price}</td>
+          <td>${props.cart.price}</td>
           <td>{props.cart.description}</td>
-          <td onClick={props.deleteFromCart} className="remove">X</td>
+          <td onClick={() => {props.deleteFromCart(props.cart.id)}} className="remove">X</td>
         </tr>
 
   );

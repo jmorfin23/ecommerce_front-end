@@ -4,7 +4,6 @@ import CartTable from '../../components/cartTable';
 import Products from '../products';
 
 class Checkout extends Component {
-
   render() {
   return (
     <div className="checkout">

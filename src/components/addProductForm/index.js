@@ -20,7 +20,6 @@ function AddProductForm(props) {
             </div>
             <button type="submit" className="btn btn-primary" name="submit">Add Product</button>
           </form>
-          <button onClick={props.getData} type="submit" className="btn btn-primary" name="submit">See products</button>
     </div>
   );
 }

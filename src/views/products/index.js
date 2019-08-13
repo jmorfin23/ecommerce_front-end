@@ -16,7 +16,8 @@ class Products extends Component {
     'cart': []
     }
   }
-  getData = async() => {
+
+      getData = async() => {
 
     let URL = 'http://localhost:5000/api/retrieve';
 
@@ -32,7 +33,29 @@ class Products extends Component {
     }
   }
 
+  displayCart = async() => {
+    console.log('inside display cart');
+
+    let URL = 'http://localhost:5000/api/retrieved';
+
+    let response = await fetch(URL);
+
+    let data = await response.json();
+
+    data = data.Success.cart
+    // update the state.
+
+    this.setState({ 'cart': data})
+  }
+
+  componentDidMount() {
+    this.getData();
+    this.displayCart();
+
+  }
+
   addToCart = async(id) => {
+
     let title= ''
     let price= 0
     let description = ''
@@ -65,15 +88,29 @@ class Products extends Component {
     this.setState({ 'cart': data})
   }
 
+
   deleteFromCart = async(id) => {
-    console.log('inside deleteFromCart');
+
+    let URL = 'http://localhost:5000/api/deleted';
+
+    let response = await fetch(URL, {
+      'method': 'DELETE',
+      'headers': {
+      'id': id
+      }
+    });
+
+    let data = await response.json();
+
+    console.log(data);
+
+    this.componentDidMount()
   }
 
   render() {
   return (
     <div className="row">
       <div className="col-md-8">
-      <button onClick={this.getData} type="submit" className="btn btn-primary" name="submit">See products</button>
       <Product products={this.state.product} addToCart={this.addToCart}/>
       </div>
       <div className="col-md-4">

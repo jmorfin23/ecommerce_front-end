@@ -28,11 +28,13 @@ class Inventory extends Component {
 
         //setting state for products
         this.setState({ product });
-  
+
     } else {
       alert('No products')
     }
-
+  }
+  componentDidMount() {
+    this.getData(); 
   }
 
   addProduct = async(e) => {
